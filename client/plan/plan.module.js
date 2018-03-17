@@ -9,6 +9,7 @@ angular.module('planModule', [])
             name: 'plan',
             url: '/plan',
             resolve: {
+                rooms: ['$http', function($http) { return $http.get('/api/rooms').then(function(res) {return res.data;})}]
             },
             component: 'planComponent'
         });
@@ -21,7 +22,7 @@ angular.module('planModule', [])
 
 
     .component('planComponent', {
-        bindings: {  },
+        bindings: { rooms: '<'  },
         require: { app: '^appComponent' },
         template: require('./plan.component.html'),
         controller: ['$http', function ($http) {

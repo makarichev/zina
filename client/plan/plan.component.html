@@ -1,16 +1,4 @@
 <style>
-    .plan-image-div {
-        /* background-color: brown; */
-        height:85vh;
-        border: 2px red solid;
-        background: url('/images/plan.png') no-repeat center #eee;
-    }
-
-    .plan-image-div img {
-        border: 2px gray solid;
-
-    }
-
     .panel.room {
         height: 23vh;
     }
@@ -18,6 +6,7 @@
 
 <div class="row">
 
+    {{$ctrl.rooms}}
     <div class="row">
         <div class="col-sm-2">
             <div class="panel panel-default" style="height:76vh">

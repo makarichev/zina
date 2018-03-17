@@ -3,13 +3,15 @@ var express = require('express');
 var router = express.Router();
 
 var settings = require('../app.settings.json')
+var rooms = require('../data/rooms.json')
+
 
 router.get('/commands', function (req, res) {
   res.send([
     { 'command': 'comand1' },
     { 'command': 'comand2' },
     { 'command': 'comand3' },
-    { 'command': 'comand4' },
+    { 'command': 'comand4' }, 
     { 'command': 'comand4' },
     { 'command': 'comand4' },
     { 'command': 'comand4' },
@@ -30,6 +32,9 @@ router.get('/settings', function (req, res) {
   res.send(settings);
 });
 
+router.get('/rooms', function (req, res) {
+  res.send(rooms);
+});
 
 
 
