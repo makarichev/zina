@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="page-header">
+        <h3>ROOT-COMPONENT</h3>
+
+    </div>
+    <p>В российских магазинах и супермаркетах до 26 марта пройдет масштабная проверка молочной продукции для выявления доли
+        фальсификата на рынке. Подобная инспекция проводится на федеральном уровне впервые. Об этом в пятницу, 16 марта,
+        сообщает РБК со ссылкой на источники.
+    </p>
+    <p>
+            Россия была приглашена на мероприятие как почетный гость. Такое предложение сделал сам Макрон в мае 2017 года на встрече с президентом России Владимиром Путиным. Однако за несколько часов до прибытия президента Франции на открытие салона Елисейский дворец уведомил, что на российский стенд глава государства не придет.        
+    </p>
+    <p>
+        <button type="button" class="btn" ng-click="$ctrl.app.log('asdf')">app log</button>
+    
+        <span uib-dropdown>
+            <a href id="simple-dropdown" uib-dropdown-toggle>
+                Click me for a dropdown, yo!
+            </a>
+            <ul class="dropdown-menu" uib-dropdown-menu>
+                <li ng-repeat="cmd in $ctrl.commands">
+                    <a>{{cmd.command}}</a>
+                </li>
+            </ul>
+        </span>
+    </p>
+
+    <pre>
+                    {{$ctrl.settings}}
+        </pre>
+    
+    <pre>
+                    <a href="/api/settings">commands</a>
+                    <a href="/api/commands">settings</a>
+            </pre>
+
+</div>
