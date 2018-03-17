@@ -1,0 +1,10 @@
+<table class="table">
+    <tr ng-repeat="station in $ctrl.nearest.stations">
+        <td>
+            <a href ng-click=$ctrl.getShedule(station.code)><i class="fa fa-bus"></i> {{station.title}}</a>
+        
+        </td>
+    </tr>
+</table>
+
+{{$ctrl.shedule}}

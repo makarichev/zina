@@ -4,6 +4,7 @@ var router = express.Router();
 
 var settings = require('../app.settings.json')
 var rooms = require('../data/rooms.json')
+var request = require('request')
 
 
 router.get('/commands', function (req, res) {
@@ -36,6 +37,41 @@ router.get('/rooms', function (req, res) {
   res.send(rooms);
 });
 
+router.get('/nearest', function(req, res) {
+  var options = {
+    url: 'https://api.rasp.yandex.net/v3.0/nearest_stations/',
+    method: 'GET',
+    qs: {
+      apikey: 'dce68fd2-ece7-4e26-b1c9-1d950c2fcf13',
+      lat: 55.973457,
+      lng: 37.160758,
+      distance: 1,
+      lang: 'ru_RU',
+      station_types: 'bus_stop',
+      transport_types: 'bus'
+    }
+  }
+//s9808198
+  request(options, function(err, response, body) {
+    res.send(JSON.parse(response.body));
+  })
+})
 
+
+
+router.get('/shedule?code', function(req, res) {
+  var options = {
+    url: 'https://api.rasp.yandex.net/v3.0/schedule/',
+    method: 'GET',
+    qs: {
+      apikey: 'dce68fd2-ece7-4e26-b1c9-1d950c2fcf13',
+      station: 's9808198'
+    }
+  }
+  console.log(req)
+  request(options, function(err, response, body) {
+    res.send(JSON.parse(response.body));
+  })
+})
 
 module.exports = router;

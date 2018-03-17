@@ -8,10 +8,18 @@ require('angular-ui-bootstrap')
 require('./common/common.module.js')
 require('./root/root.module.js')
 require('./plan/plan.module.js')
+require('./transport/transport.module.js')
 
 
 
-var app = angular.module('appModule', ['ui.router', 'ui.bootstrap', 'commonModule', 'rootModule', 'planModule']);
+var app = angular.module('appModule', [
+    'ui.router', 
+    'ui.bootstrap', 
+    'commonModule', 
+    'rootModule', 
+    'planModule', 
+    'transportModule'
+]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/root');
