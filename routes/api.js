@@ -74,4 +74,19 @@ router.get('/shedule?code', function(req, res) {
   })
 })
 
+router.get('cam', function(req, res) {
+  //rtsp://192.168.1.64:554
+  //admin
+  //3rds-zn5y-383q
+
+  Stream = require('node-rtsp-stream');
+  stream = new Stream({
+      name: 'cam1',
+      streamUrl: 'rtsp://192.168.1.64:554',
+      wsPort: 3000
+  });
+
+
+})
+
 module.exports = router;
