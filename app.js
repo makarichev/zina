@@ -11,6 +11,7 @@ var api = require('./routes/api');
 
 
 var app = express();
+var server = require('http').Server(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,7 +46,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var io = require('socket.io')(app);
+var io = require('socket.io')(server);
 io.on("connection", function(socket){
 
   socket.on('client', function (data) {

@@ -9,6 +9,7 @@ require('./common/common.module.js')
 require('./root/root.module.js')
 require('./plan/plan.module.js')
 require('./transport/transport.module.js')
+require('./cam/cam.module.js')
 
 
 
@@ -18,7 +19,8 @@ var app = angular.module('appModule', [
     'commonModule', 
     'rootModule', 
     'planModule', 
-    'transportModule'
+    'transportModule',
+    'camModule'
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
