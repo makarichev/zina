@@ -29,7 +29,7 @@ angular.module('camModule', [])
             var $ctrl = this;
 
             this.$onInit = function () {
-                var socket = io('http://server:3000');
+                var socket = io('http://localhost:3000');
                 console.log('emit')
                 socket.emit('client', { my: 'data' });
          
